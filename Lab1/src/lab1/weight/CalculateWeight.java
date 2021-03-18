@@ -1,7 +1,10 @@
 package lab1.weight;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CalculateWeight {
+	
+	private static WeightList weightlist = new WeightList();
 
       public static void main(String[] args) {
         System.out.println(" ===== How much do I weigh on other planets? =====\n");
@@ -17,7 +20,7 @@ public class CalculateWeight {
         boolean exit = false;
         Scanner in = new Scanner(System.in);
         System.out.printf("\n");
-        System.out.println("\n1). Please type 1 and press enter, to know the weight in kg." + "\n2). Please type 2 to exit this program.");
+        System.out.println("\n1). Please type 1 and press enter, to know the weight in kg." + "\n2). Please type 2 to exit this program." + "\n3). To calcute exercise 8.");
         int choice = in.nextInt();
         if (choice == 1)
         {
@@ -27,7 +30,14 @@ public class CalculateWeight {
         if (choice == 2)
         {
           System.out.println("Ooops.. Something is not quite right, please try again later!");
-          exit = true;
+          //exit = true;
+          System.exit(0);
+        }
+        if (choice == 3)
+        {
+        	calWeightList();
+        	System.out.printf("\n");
+        	weight();
         }
     }
 
@@ -47,6 +57,12 @@ public class CalculateWeight {
         	System.out.printf("\n");
         	System.out.printf("Your weight on Earth is: %.1f kg", (weightkg));
             weight();
+            System.out.printf("\n");
         }
+    }
+    
+    public static void calWeightList()
+    {
+    	weightlist.weightList();
     }
 }
